@@ -6,8 +6,8 @@ using namespace std;
 
 int main(){
 	ifstream file("input.txt");
-	vector<char> move, Sug;
-	char m, s;
+	vector<char> move, sug; //array of moves and suggested moves/outcomes
+	char m, s; //m being the move made, and s being the suggested move/outcome
 	int points;
 
 	//a = rock b = paper c = scissors
@@ -15,31 +15,31 @@ int main(){
 
 	while(file >> m >> s){
 		move.push_back(m);
-		Sug.push_back(s);
+		sug.push_back(s);
 	}
 
 	for(int i = 0; i < move.size(); i++){
-		if(move[i] == 'A' && Sug[i] == 'Y'){
+		if(move[i] == 'A' && sug[i] == 'Y'){
 			points += 6;
 		}
 
-		if(move[i] == 'B' && Sug[i] == 'Z'){
+		if(move[i] == 'B' && sug[i] == 'Z'){
 			points += 6;
 		}
 
-		if(move[i] == 'C' && Sug[i] == 'X'){
+		if(move[i] == 'C' && sug[i] == 'X'){
 			points += 6;
 		}
 
-		if(Sug[i] == 'X'){
+		if(sug[i] == 'X'){
 			points += 1;
-		} else if(Sug[i] == 'Y'){
+		} else if(sug[i] == 'Y'){
 			points += 2;
 		} else {
 			points += 3;
 		}
 
-		if(move[i] == 'A' && Sug[i] == 'X' || move[i] == 'B' && Sug[i] == 'Y' || move[i] == 'C' && Sug[i] == 'Z') {
+		if(move[i] == 'A' && sug[i] == 'X' || move[i] == 'B' && sug[i] == 'Y' || move[i] == 'C' && sug[i] == 'Z') {
 			points += 3;
 		}
 
@@ -52,34 +52,34 @@ int main(){
 	for(int i = 0; i < move.size(); i++){
 		switch(move[i]){
 			case 'A':
-				if(Sug[i] == 'X'){
+				if(sug[i] == 'X'){
 					points += 3; 
-				} else if(Sug[i] == 'Y'){
+				} else if(sug[i] == 'Y'){
 					points += 3;
 					points += 1;
-				} else if(Sug[i] == 'Z'){
+				} else if(sug[i] == 'Z'){
 					points += 6;
 					points += 2;
 				}
 				break;
 			case 'B':
-				if(Sug[i] == 'X'){
+				if(sug[i] == 'X'){
 					points += 1;
-				} else if(Sug[i] == 'Y'){
+				} else if(sug[i] == 'Y'){
 					points += 3;
 					points += 2;
-				} else if(Sug[i] == 'Z'){
+				} else if(sug[i] == 'Z'){
 					points += 6;
 					points += 3;
 				}
 				break;
 			case 'C':
-				if(Sug[i] == 'X'){
+				if(sug[i] == 'X'){
 					points += 2;
-				} else if(Sug[i] == 'Y'){
+				} else if(sug[i] == 'Y'){
 					points += 3;
 					points += 3;
-				} else if(Sug[i] == 'Z'){
+				} else if(sug[i] == 'Z'){
 					points += 6;
 					points += 1;
 				}
