@@ -45,7 +45,7 @@ for d in dirs:
 	if dsize <= 100000:
 		totsize+=dsize
 
-#print(totsize)
+print("Part one: ",totsize)
 
 totsize = dirsize('/')
 unused = 70000000 - totsize
@@ -55,4 +55,4 @@ for d in dirs:
 	if unused + ds >= 30000000:
 		if ms is None or ms > ds:
 			ms = ds
-print(ms)
+print("Part two: ",ms)
