@@ -33,6 +33,8 @@
 
 #Input files
 *.txt
+input
+sample
 
 #Get rid of this stuff
 .vscode/
