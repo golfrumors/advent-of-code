@@ -16,5 +16,7 @@ int main() {
         i++;
     }
 
+    file.close();
+
     return 0;
 }

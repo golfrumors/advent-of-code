@@ -16,5 +16,7 @@ int main() {
     
     cout << "Part 1 : " << ans << endl;
 
+    file.close();
+
     return 0;
 }
